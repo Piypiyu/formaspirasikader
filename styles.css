@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.kepala {
+  background-color: rgb(0, 0, 0);
+}
+.navigasi {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1450;
+}
+.list-kegiatan {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+li {
+  margin: 20px;
+  color: green;
+}
+.logo {
+  align-content: center;
+  padding-left: 30px;
+  color: rgb(28, 190, 28);
+  font-size: 30px;
+  transition: tansform 2s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.2);
+}
+.logo1 {
+  color: white
+}
+a {
+  text-decoration: none;
+  color: rgb(170, 181, 46);
+}
+a:hover {
+  color: rgb(28, 190, 28);
+}
+.halaman-depan {
+  background-color: rgb(99, 133, 62);
+  display: flex;
+  align-items: center;
+  padding: 100px;
+}
+.hanya-teks {
+  padding: 200px;
+  color: white;
+}
+.hanya-gambar {
+}
+.judul {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.tombol {
+    background-color: rgb(0, 0, 0);
+    padding: 8px;
+}
+.deskripsi-judul {
+    font-size: 25px;
+}
