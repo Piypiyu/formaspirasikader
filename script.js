@@ -13,7 +13,7 @@ document.getElementById("aspirasiForm").addEventListener("submit", function (e) 
     return;
   }
 
-  fetch("https://script.google.com/macros/s/AKfycbxeVMCzSHwhRom0KV0WRlDnXB9dFSNgYehqxqvUYXww1E3gVvL5Y7GzvhuJiBV1h7I3/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxFPzgE3NTr7ZpwBbU7qql2byzbqJMk-TBc5u_KivbOes4UNMWxf9UZP7aMg5ESkKRYpQ/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
