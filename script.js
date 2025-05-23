@@ -1,53 +1,32 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  margin: 0;
-  padding: 0;
-}
+document.getElementById("aspirasiForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-.form-container {
-  background: #fff;
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+  const data = {
+    nama: document.getElementById("nama").value.trim(),
+    kategori: document.getElementById("kategori").value,
+    kritikan: document.getElementById("kritikan").value.trim(),
+    solusi: document.getElementById("solusi").value.trim()
+  };
 
-h2 {
-  text-align: center;
-  color: #333;
-}
+  if (!data.nama || !data.kategori || !data.kritikan || !data.solusi) {
+    alert("Semua kolom harus diisi!");
+    return;
+  }
 
-label {
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input[type="text"],
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007acc;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #005f99;
-}
+  fetch("https://script.google.com/macros/s/AKfycbwco35CqEpvkI-eZkOTeKWIegQAGP4Bsb7FOxZA_sSKnKdElU_d8wYw5XcVO30NU4_p/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(response => response.text())
+    .then(result => {
+      alert("Aspirasi berhasil dikirim!");
+      document.getElementById("aspirasiForm").reset();
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Terjadi kesalahan. Coba lagi nanti.");
+    });
+});
