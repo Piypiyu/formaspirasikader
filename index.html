@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Aspirasi Kader</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Form Aspirasi Kader</h2>
+      <form id="aspirasiForm">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required />
+
+        <label for="kategori">Kategori Aspirasi:</label>
+        <select id="kategori" name="kategori" required>
+          <option value="">-- Pilih Kategori --</option>
+          <option value="Kegiatan">Kegiatan</option>
+          <option value="Kepemimpinan">Kepemimpinan</option>
+          <option value="Kaderisasi">Kaderisasi</option>
+        </select>
+
+        <label for="kritikan">Kritikan:</label>
+        <textarea id="kritikan" name="kritikan" rows="3" required></textarea>
+
+        <label for="solusi">Solusi:</label>
+        <textarea id="solusi" name="solusi" rows="3" required></textarea>
+
+        <button type="submit">Kirim Aspirasi</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
